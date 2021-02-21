@@ -8,7 +8,9 @@
     "std": "standard",
     "coverage": "istanbul cover _mocha -- --timeout=5000 test/**/*.js",
     "publish-coverage": "cat ./coverage/lcov.info | coveralls",
-    "security_check": "nsp check"
+    "security_check": "nsp check",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -32,7 +34,8 @@
     "eventemitter2": "^4.1.0",
     "jsonfile": "^3.0.0",
     "lodash": "^4.15.0",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "chai": "^4.0.2",
@@ -47,5 +50,6 @@
     "env": [
       "mocha"
     ]
-  }
+  },
+  "snyk": true
 }
